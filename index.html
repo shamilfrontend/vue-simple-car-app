@@ -31,11 +31,11 @@
             <hr>
 
             <ul class="list-group">
-                <li class="list-group-item list-group-item-action pointer">12345</li>
-                <li class="list-group-item list-group-item-action pointer">12345</li>
-                <li class="list-group-item list-group-item-action pointer">12345</li>
-                <li class="list-group-item list-group-item-action pointer">12345</li>
-                <li class="list-group-item list-group-item-action pointer">12345</li>
+                <li
+                    v-for="(car, index) of cars"
+                    class="list-group-item list-group-item-action pointer"
+                    @click="selectedCarIndex(index)"
+                >{{car.name}} - {{car.model}}</li>
             </ul>
         </div>
 
@@ -43,22 +43,22 @@
 
             <div class="row">
                 <div class="col-md-5">
-                    <h2>aventador</h2>
+                    <h2>{{car.name}}</h2>
                     <img
-                        src="./images/aventador.jpg"
-                        alt="name"
+                        :src="car.image"
+                        :alt="car.name"
                         class="carImage rounded"
                     >
                 </div>
                 <div class="col-md-7 pt-2">
                     <h5>Car Details</h5>
                     <ul>
-                        <li>Model - <strong>aventador</strong></li>
-                        <li>Year - <strong>2018</strong></li>
-                        <li>Owner - <strong>Max</strong></li>
+                        <li>Model - <strong>{{car.model}}</strong></li>
+                        <li>Year - <strong>{{car.year}}</strong></li>
+                        <li>Owner - <strong>{{car.owner}}</strong></li>
                     </ul>
 
-                    <p>+7 925 048 99 88</p>
+                    <p>{{car.phone}}</p>
 
                     <div class="btns">
                         <button class="btn btn-outline-success mr-3">Show phone</button>
