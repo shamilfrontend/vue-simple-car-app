@@ -69,7 +69,9 @@
                     </ul>
 
                     <div class="phoneWrap">
-                        <p v-if="phoneVisibility">{{car.phone}}</p>
+                        <transition name="phone">
+                            <p v-if="phoneVisibility">{{car.phone}}</p>
+                        </transition>
                     </div>
 
                     <div class="btns">
@@ -90,7 +92,7 @@
 
     <div class="row mb-3" v-if="logs.length !== 0">
         <div class="col-md-12">
-            <h4 class="mb-3">Recent Activity:</h4>
+            <h4 class="mb-3">Last actions:</h4>
             <ul class="list-group">
                 <li
                     v-for="log of logs"
@@ -132,6 +134,7 @@
                         <li>Model - <strong>{{car.model}}</strong></li>
                         <li>Year - <strong>{{car.year}}</strong></li>
                         <li>Owner - <strong>{{car.owner}}</strong></li>
+                        <li v-if="phoneVisibility">Phone - <strong>{{car.phone}}</strong></li>
                     </ul>
                 </div>
                 <div class="modal-footer">
@@ -156,9 +159,7 @@
         ></div>
     </div>
     <!--modal end-->
-
 </div>
-
 
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script src="./app.js"></script>

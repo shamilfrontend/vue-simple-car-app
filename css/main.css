@@ -34,3 +34,27 @@ img {
 .modal-dialog {
 	z-index: 1041;
 }
+
+/*
+animate
+.name-enter {}
+.name-enter-active {}
+.name-enter-to {}
+
+.name-leave {}
+.name-leave-active {}
+.name-leave-to {}
+*/
+
+.phone-enter, .phone-leave-to {
+	transform: translateX(100px);
+	opacity: 0;
+}
+
+.phone-enter-active, .phone-leave-active {
+	transition: all .5s;
+}
+
+
+
+
