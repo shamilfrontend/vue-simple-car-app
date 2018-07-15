@@ -1,0 +1,12 @@
+#app {
+	outline: 1px solid #eee;
+}
+
+.pointer {
+	cursor: pointer;
+}
+
+.carImage {
+	width: 100%;
+	height: auto;
+}

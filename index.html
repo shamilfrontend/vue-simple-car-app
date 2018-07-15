@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>VueJS приложение на авто тематику</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <link rel="stylesheet" href="./main.css" >
+</head>
+<body>
+
+<div class="container pt-5 pb-5" id="app">
+    <div class="row mb-3">
+        <div class="col">
+            <h1>Cars Application</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <div class="form-group">
+                <label for="search">Find your car</label>
+                <input
+                    type="search"
+                    class="form-control"
+                    id="search"
+                    placeholder="Name, model"
+                >
+            </div>
+
+            <hr>
+
+            <ul class="list-group">
+                <li class="list-group-item list-group-item-action pointer">12345</li>
+                <li class="list-group-item list-group-item-action pointer">12345</li>
+                <li class="list-group-item list-group-item-action pointer">12345</li>
+                <li class="list-group-item list-group-item-action pointer">12345</li>
+                <li class="list-group-item list-group-item-action pointer">12345</li>
+            </ul>
+        </div>
+
+        <div class="col-md-8 pt-3">
+
+            <div class="row">
+                <div class="col-md-5">
+                    <h2>aventador</h2>
+                    <img
+                        src="./images/aventador.jpg"
+                        alt="name"
+                        class="carImage rounded"
+                    >
+                </div>
+                <div class="col-md-7 pt-2">
+                    <h5>Car Details</h5>
+                    <ul>
+                        <li>Model - <strong>aventador</strong></li>
+                        <li>Year - <strong>2018</strong></li>
+                        <li>Owner - <strong>Max</strong></li>
+                    </ul>
+
+                    <p>+7 925 048 99 88</p>
+
+                    <div class="btns">
+                        <button class="btn btn-outline-success mr-3">Show phone</button>
+                        <button class="btn btn-primary">Buy</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="./app.js"></script>
+</body>
+</html>
+
