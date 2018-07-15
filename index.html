@@ -34,7 +34,8 @@
                 <li
                     v-for="(car, index) of cars"
                     class="list-group-item list-group-item-action pointer"
-                    @click="selectedCarIndex(index)"
+                    @click="selectCar(index)"
+                    :class="{'active': selectedCarIndex === index}"
                 >{{car.name}} - {{car.model}}</li>
             </ul>
         </div>
@@ -42,15 +43,20 @@
         <div class="col-md-8 pt-3">
 
             <div class="row">
-                <div class="col-md-5">
-                    <h2>{{car.name}}</h2>
+                <div class="col-md-12">
+                    <h2>{{car.name}} {{car.model}}</h2>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
                     <img
                         :src="car.image"
                         :alt="car.name"
                         class="carImage rounded"
                     >
                 </div>
-                <div class="col-md-7 pt-2">
+                <div class="col-md-6 pt-2">
                     <h5>Car Details</h5>
                     <ul>
                         <li>Model - <strong>{{car.model}}</strong></li>
@@ -58,11 +64,18 @@
                         <li>Owner - <strong>{{car.owner}}</strong></li>
                     </ul>
 
-                    <p>{{car.phone}}</p>
+                    <div class="phoneWrap">
+                        <p v-if="phoneVisibility">{{car.phone}}</p>
+                    </div>
 
                     <div class="btns">
-                        <button class="btn btn-outline-success mr-3">Show phone</button>
-                        <button class="btn btn-primary">Buy</button>
+                        <button
+                            class="btn btn-outline-success mr-3"
+                            @click="phoneVisibility = true"
+                        >Show phone</button>
+                        <button
+                            class="btn btn-primary"
+                        >Buy</button>
                     </div>
                 </div>
             </div>

@@ -10,3 +10,8 @@
 	width: 100%;
 	height: auto;
 }
+
+.phoneWrap {
+	height: 24px;
+	margin-bottom: 16px;
+}
