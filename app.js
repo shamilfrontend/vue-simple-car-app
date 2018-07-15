@@ -18,12 +18,17 @@ new Vue({
 	el: '#app',
 	data: {
 		cars: cars,
-		car: cars[0],
 		selectedCarIndex: 0,
 		phoneVisibility: false,
 		search: '',
 		modalVisibility: false,
 		logs: []
+	},
+	created() {
+		window.addEventListener('keyup', this.modalClose);
+	},
+	beforeDestroy() {
+		window.removeEventListener('keyup', this.modalClose);
 	},
 	methods: {
 		selectCar(index) {
@@ -46,14 +51,24 @@ new Vue({
 				'cancel'
 			));
 		},
-		modalClose() {
-			console.log('modalClose');
-			this.modalVisibility = false;
+		modalClose(event) {
+			this.modalVisibility = !event.keyCode === 27;
+		},
+		// modalEscClose(event) {
+		// 	if (event.keyCode === 27) {
+		// 		this.modalClose();
+		// 	}
+		// },
+		carItemClassActive(index) {
+			return {'active': this.selectedCarIndex === index}
 		}
 	},
 	computed: {
+		car() {
+			return this.cars[this.selectedCarIndex]
+		},
 		phoneBtnText() {
-			return this.phoneVisibility ? 'Hide Phone': 'Show Phone';
+			return this.phoneVisibility ? 'Hide Phone' : 'Show Phone';
 		},
 		filteredCars() {
 			return this.cars.filter((car) => {

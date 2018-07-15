@@ -39,7 +39,7 @@
                     v-for="(car, index) of filteredCars"
                     class="list-group-item list-group-item-action pointer"
                     @click="selectCar(index)"
-                    :class="{'active': selectedCarIndex === index}"
+                    :class="carItemClassActive(index)"
                 >{{car.name}} - {{car.model}}</li>
             </ul>
         </div>
