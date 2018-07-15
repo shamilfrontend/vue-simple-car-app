@@ -1,0 +1,33 @@
+@media (max-width: 992px) {
+	.site-title {
+		text-align: center;
+		font-size: 26px;
+	}
+
+	.btns {
+		text-align: center;
+	}
+
+	.productDetail {
+		text-align: center;
+	}
+
+	.productDetail h2 {
+		font-size: 22px;
+		margin-bottom: 15px;
+	}
+
+	.carImage {
+		width: 70%;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	.carInfo {
+		text-align: left;
+		width: 200px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}

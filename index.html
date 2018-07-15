@@ -2,14 +2,17 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <title>VueJS приложение на авто тематику</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-    <link rel="stylesheet" href="./main.css" >
+    <link rel="stylesheet" href="./css/main.css" >
+    <link rel="stylesheet" href="./css/media.css" >
 </head>
 <body>
 
-<div class="container pt-5 pb-5" id="app">
+<div class="container" id="app">
     <div class="row mb-3">
         <div class="col">
             <h1 class="site-title">Cars Application</h1>
@@ -41,7 +44,7 @@
             </ul>
         </div>
 
-        <div class="col-md-8 pt-3">
+        <div class="col-md-8 pt-3 productDetail">
 
             <div class="row">
                 <div class="col-md-12">
@@ -59,7 +62,7 @@
                 </div>
                 <div class="col-md-6 pt-2">
                     <h5>Car Details</h5>
-                    <ul>
+                    <ul class="carInfo">
                         <li>Model - <strong>{{car.model}}</strong></li>
                         <li>Year - <strong>{{car.year}}</strong></li>
                         <li>Owner - <strong>{{car.owner}}</strong></li>
@@ -85,7 +88,7 @@
         </div>
     </div>
 
-    <div class="row" v-if="logs.length !== 0">
+    <div class="row mb-3" v-if="logs.length !== 0">
         <div class="col-md-12">
             <h4 class="mb-3">Recent Activity:</h4>
             <ul class="list-group">
@@ -98,6 +101,14 @@
                     }"
                 >{{log.text}} - {{log.date | formatDate}}</li>
             </ul>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="site-dev text-center">
+                <a href="http://alisultanov.ru/" target="_blank">Разработка приложения alisultanov.ru</a>
+            </div>
         </div>
     </div>
 
