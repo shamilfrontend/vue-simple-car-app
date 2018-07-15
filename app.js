@@ -16,7 +16,8 @@ new Vue({
 		cars: cars,
 		car: cars[0],
 		selectedCarIndex: 0,
-		phoneVisibility: false
+		phoneVisibility: false,
+		modalVisibility: false,
 	},
 	methods: {
 		selectCar(index) {
@@ -26,7 +27,7 @@ new Vue({
 		}
 	},
 	computed: {
-		togglePhone() {
+		phoneBtnText() {
 			return this.phoneVisibility ? 'Hide Phone': 'Show Phone';
 		}
 	}

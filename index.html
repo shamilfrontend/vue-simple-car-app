@@ -71,10 +71,11 @@
                     <div class="btns">
                         <button
                             class="btn btn-outline-success mr-3"
-                            @click="phoneVisibility = true"
-                        >Show phone</button>
+                            @click="phoneVisibility = !phoneVisibility"
+                        >{{phoneBtnText}}</button>
                         <button
                             class="btn btn-primary"
+                            @click="modalVisibility = true"
                         >Buy</button>
                     </div>
                 </div>
@@ -82,6 +83,44 @@
 
         </div>
     </div>
+
+
+    <!--modal-->
+    <div v-if="modalVisibility" class="buyModal modal fade show" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">{{car.name}} {{car.model}}</h5>
+                    <button
+                        type="button"
+                        class="close"
+                        aria-label="Close"
+                        @click="modalVisibility = false"
+                    >
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <ul>
+                        <li>Model - <strong>{{car.model}}</strong></li>
+                        <li>Year - <strong>{{car.year}}</strong></li>
+                        <li>Owner - <strong>{{car.owner}}</strong></li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div
+        v-if="modalVisibility"
+        class="modal-backdrop fade show"
+    ></div>
+    <!--modal end-->
+
 </div>
 
 

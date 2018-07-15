@@ -2,6 +2,11 @@
 	outline: 1px solid #eee;
 }
 
+img {
+	max-width: 100%;
+	height: auto;
+}
+
 .pointer {
 	cursor: pointer;
 }
@@ -14,4 +19,8 @@
 .phoneWrap {
 	height: 24px;
 	margin-bottom: 16px;
+}
+
+.buyModal {
+	display: block;
 }
